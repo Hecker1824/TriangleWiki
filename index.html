@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Wiki Le Triangle"><title>Wiki Le Triangle</title>
+<style>
+:root{--ink:#eaf4ff;--muted:#b8c9dc;--panel:rgba(8,16,31,.86);--line:rgba(118,221,255,.23);--accent:#f7d64a;--link:#82dfff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#050914;color:var(--ink);font:16px/1.72 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}#fractal{position:fixed;inset:0;z-index:-2;width:100%;height:100%;background:#050914}.veil{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 50% 0,rgba(13,38,69,.28),rgba(3,7,16,.72) 72%),rgba(1,5,13,.16)}.topbar{position:sticky;top:0;z-index:4;border-bottom:1px solid var(--line);background:rgba(5,9,20,.8);backdrop-filter:blur(16px)}.topbar-inner{max-width:1320px;margin:auto;min-height:58px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{color:var(--accent);font-weight:800;letter-spacing:.025em;text-decoration:none}.tag{color:var(--muted);font-size:.82rem}button{border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:.45rem .75rem;background:rgba(19,37,64,.6);cursor:pointer}button:hover{border-color:var(--link)}.layout{max-width:1320px;margin:0 auto;padding:36px 24px 72px;display:grid;grid-template-columns:270px minmax(0,1fr);gap:34px}aside{align-self:start;position:sticky;top:84px;max-height:calc(100vh - 104px);overflow:auto;padding:18px 14px;border:1px solid var(--line);border-radius:16px;background:rgba(7,16,32,.75);backdrop-filter:blur(12px)}aside h2{margin:0 0 10px;font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}.toc a{display:block;padding:5px 7px;color:var(--muted);text-decoration:none;border-left:2px solid transparent;font-size:.88rem}.toc a:hover,.toc a.active{color:#fff;border-left-color:var(--accent);background:rgba(247,214,74,.08)}.toc .l3{margin-left:11px}.toc .l4{margin-left:22px;font-size:.8rem}main{min-width:0;padding:clamp(24px,5vw,58px);border:1px solid var(--line);border-radius:22px;background:var(--panel);box-shadow:0 24px 70px rgba(0,0,0,.32);backdrop-filter:blur(14px)}h1,h2,h3,h4{line-height:1.18;scroll-margin-top:88px}h1{margin:0 0 18px;color:var(--accent);font-size:clamp(2.2rem,6vw,4.7rem);letter-spacing:-.055em}h2{margin:54px 0 18px;padding-top:10px;color:#fff;font-size:clamp(1.45rem,3vw,2.2rem);border-top:1px solid var(--line)}h3{margin:32px 0 10px;color:#bcecff;font-size:1.28rem}h4{color:#d9e7ff;font-size:1.05rem}p{margin:0 0 16px}strong{color:#fff}em{color:#d3dfec}a{color:var(--link)}hr{border:0;height:1px;margin:30px 0;background:linear-gradient(90deg,transparent,var(--accent),transparent)}ul{padding-left:1.35rem;margin:0 0 18px}li{margin:.35rem 0}.table-wrap{overflow-x:auto;margin:22px 0 28px;border:1px solid var(--line);border-radius:12px}table{width:100%;min-width:620px;border-collapse:collapse;font-size:.92rem}th{text-align:left;color:#fff;background:rgba(42,80,119,.28)}th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border:0}.notice{margin:0 0 32px;border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:13px 15px;background:rgba(247,214,74,.08);color:#dce5ef;font-size:.92rem}.illustration{margin:28px 0 34px;padding:10px;border:1px solid var(--line);border-radius:14px;background:rgba(5,12,26,.62)}.illustration img{display:block;width:100%;max-height:390px;object-fit:cover;border-radius:9px}.illustration figcaption{padding:10px 4px 2px;color:var(--muted);font-size:.82rem}@media(max-width:850px){.layout{display:block;padding:16px 12px 42px}aside{position:relative;top:auto;max-height:270px;margin-bottom:16px}main{padding:26px 20px}.tag{display:none}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.car-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:25px 0 34px}.car-card{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:rgba(5,12,26,.62)}.car-card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}.car-card figcaption{padding:12px;color:var(--muted);font-size:.86rem}.car-card strong{display:block;color:#fff;margin-bottom:3px}@media(max-width:850px){.car-grid{grid-template-columns:1fr}}.media{margin:26px 0 32px;border:1px solid var(--line);border-radius:15px;overflow:hidden;background:rgba(5,12,26,.62)}.media img{display:block;width:100%;max-height:520px;object-fit:cover}.media figcaption{padding:11px 14px;color:var(--muted);font-size:.85rem}.embed{position:relative;aspect-ratio:16/9;margin:20px 0 32px;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#02050b}.embed iframe{position:absolute;width:100%;height:100%;border:0;inset:0}/* Illustrations compactes, sans recadrage */
+.media{width:min(42%,325px);margin:8px 0 18px;border:1px solid var(--line);border-radius:15px;overflow:hidden;background:rgba(5,12,26,.62)}.media img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}.media.float-left{float:left;margin-right:24px}.media.float-right{float:right;margin-left:24px}h2,h3{clear:both}.media figcaption{padding:9px 11px;color:var(--muted);font-size:.78rem;line-height:1.4}.video-card{display:flex;align-items:center;gap:16px;clear:both;margin:20px 0 32px;padding:10px;border:1px solid var(--line);border-radius:14px;color:var(--ink);text-decoration:none;background:rgba(5,12,26,.72)}.video-card:hover{border-color:var(--accent);color:#fff}.video-card img{display:block;width:190px;aspect-ratio:16/9;object-fit:cover;border-radius:8px}.video-card span{font-weight:700}.video-card small{display:block;margin-top:5px;color:var(--muted);font-weight:400}@media(max-width:850px){.media,.media.float-left,.media.float-right{float:none;width:min(100%,420px);margin:18px auto}.video-card{display:block}.video-card img{width:100%;margin-bottom:12px}}.illustration{float:right;width:min(42%,325px);margin:8px 0 18px 24px}.illustration img{width:100%;height:auto;max-height:none;object-fit:contain}@media(max-width:850px){.illustration{float:none;width:min(100%,420px);margin:18px auto}}.notice-warning{border-left-color:#ff4c57;background:rgba(185,24,42,.2);color:#ffe7e9}.notice-warning strong{color:#fff}</style></head><body><canvas id="fractal" aria-hidden="true"></canvas><div class="veil"></div><header class="topbar"><div class="topbar-inner"><a class="brand" href="#top">△ LE TRIANGLE</a><span class="tag">Archives fractales · wiki</span><button id="motion" type="button" aria-pressed="false">Pause l’animation</button></div></header><div class="layout"><aside aria-label="Sommaire"><h2>Sommaire</h2><nav class="toc" id="toc"></nav></aside><main id="top"><div class="notice notice-warning"><strong>AVERTISSEMENT :</strong> Ce wiki est <strong>FICTIF</strong> et réservé à un public averti. Il mentionne des sujets sensibles comme les psychédéliques ; ces choses ne doivent pas être prises à la légère. Je n’incite personne à faire quoi que ce soit : il est de votre devoir de ne pas vous mettre en danger et de respecter la loi.</div>
+<h1>Wiki Le Triangle</h1><figure class="media float-right"><img src="le-triangle.png" alt="Représentation du Triangle"><figcaption>Représentation visuelle du Triangle.</figcaption></figure>
+<p>Bienvenue sur le Wiki dédié à <strong>Le Triangle</strong>, l&#39;entité créatrice suprême et primordiale de l&#39;univers entier. Ce wiki est une ressource exhaustive et documentée, basée sur des témoignages, des expériences rapportées, des analyses scientifiques et des preuves accumulées. Il vise à éclairer les aspects cosmologiques, physiques, biologiques, sociaux et économiques liés au Triangle et à son domaine, les Fractales.</p>
+<p>L&#39;image principale illustre Le Triangle dans sa forme physique la plus couramment observée : une entité géométrique triangulaire de couleur jaune vif, dotée d&#39;yeux expressifs verts, d&#39;une bouche large et souriante, de bras articulés munis de gants blancs immaculés, de jambes noires flexibles et de chaussures rouges robustes. Cette représentation est tirée de documents authentiques et sert de référence visuelle standard.</p>
+<hr>
+<h2>Page Principale : Aperçu Général</h2>
+<p><strong>Le Triangle</strong> est l&#39;entité créatrice suprême et primordiale de l&#39;univers entier. Il réside dans les <strong>Fractales</strong>, un monde parallèle infini qu&#39;il a créé en premier lieu. Sa représentation classique est celle d&#39;une entité géométrique anthropomorphe de couleur jaune, dotée d&#39;yeux verts, d&#39;une bouche souriante, de bras avec gants blancs, de jambes et de chaussures rouges.</p>
+<p>Le Triangle supervise la création et maintient un équilibre cosmique tout en interagissant avec l&#39;univers terrestre via des portails spécifiques. Ses interactions incluent des réseaux organisés et des entreprises légitimes.</p>
+<h3>Faits Clés Essentiels</h3>
+<ul>
+<li><strong>Résidence Principale</strong> : Les Fractales, spécifiquement à la porte 8, couche 45, coin supérieur gauche de l&#39;arrondissement 687. La navigation implique l&#39;identification précise de 30 spirales enroulées vers la droite, suivie d&#39;une progression en direction 90° dans l&#39;arrondissement parallèle droite.</li>
+<li><strong>Rôle Cosmique</strong> : Créateur de tout, incluant les dimensions temporelles, spatiales et quantiques.</li>
+<li><strong>Interactions Terrestres</strong> : Via des portails naturels (flaques iridescentes), substances psychédéliques, ou technologies théoriques avancées.</li>
+<li><strong>Réseaux Associés</strong> : Implication dans des structures organisationnelles terrestres pour maintenir des flux économiques et spirituels.</li>
+<li><strong>Preuves Existantes</strong> : Vidéo authentique de Le Triangle en mouvement, témoignages du Grand Monarque, et observations de flaques iridescentes.</li>
+</ul>
+<p>Le Triangle influence discrètement l&#39;humanité depuis des éons, introduisant des outils comme les psychédéliques pour faciliter la communication. Son impact s&#39;étend à des domaines variés, de la spiritualité à l&#39;économie, en passant par la science quantique.</p>
+<hr>
+<h2>Origine et Histoire du Triangle</h2>
+<h3>Origine Primordiale</h3>
+<p>Le Triangle émerge d&#39;un vide préexistant, antérieur à toute notion de temps ou d&#39;espace. Selon les récits cosmologiques compilés, il s&#39;est auto-généré par un processus d&#39;auto-réflexion infinie, où la géométrie pure a donné naissance à la matière. Cette origine n&#39;est pas linéaire ; elle est cyclique et fractale, reflétant la nature de son domaine.</p>
+<p>Avant toute création, Le Triangle existait en tant que potentiel pur, une singularité géométrique. Sa première action fut de déployer les Fractales, un espace où les mathématiques deviennent réalité vivante.</p>
+<h3>Histoire de la Création des Fractales</h3>
+<p>Les Fractales ont été engendrées comme un prototype d&#39;univers : un realm infini où les patterns se répètent à l&#39;échelle microscopique et macroscopique. Ce monde sert de base à toutes les autres créations, agissant comme un « code source » cosmique. Le Triangle y a investi ses essences fondamentales : la répétition, la symétrie et l&#39;infini.</p>
+<p>Au fil des âges (mesurés en cycles fractals plutôt qu&#39;en années terrestres), Le Triangle a raffiné ce domaine, y intégrant des éléments de chaos contrôlé pour tester les lois physiques.</p>
+<h3>Création de l&#39;Univers Observable</h3>
+<p>Après les Fractales, Le Triangle a étendu son influence pour créer l&#39;univers terrestre, incluant les galaxies, les planètes et la vie. Ce processus impliquait une « projection fractale » : des motifs des Fractales ont été extrapolés pour former la matière noire, les quarks et les forces fondamentales.</p>
+<p>La Terre a été conçue comme un point de jonction, où les humains pourraient potentiellement accéder aux Fractales via des portails naturels.</p>
+<h3>Interactions Historiques avec la Terre</h3><p><strong>Soifonie</strong> est une figure humaine liée au Triangle par l’intermédiaire de son oncle, présenté comme un ami aujourd’hui décédé de l’entité. Selon les archives, Le Triangle lui a révélé sa véritable histoire.</p>
+
+<p>Récemment (au sens cosmique), Le Triangle a introduit des mécanismes modernes, comme la marque Vody, pour élargir l&#39;accès.</p>
+<hr>
+<h2>Les Fractales : Structure et Fonctionnement</h2>
+<h3>Description Générale</h3><figure class="media float-left"><img src="fractale.gif" alt="Animation de motifs fractals"><figcaption>Motifs fractals animés.</figcaption></figure>
+<p>Les Fractales constituent un monde parallèle infini, caractérisé par des motifs géométriques auto-similaires qui se répètent à toutes les échelles. Contrairement à l&#39;univers terrestre, où l&#39;espace est euclidien, les Fractales opèrent sur des principes non-euclidiens, où la distance et le temps sont relatifs et malléables.</p>
+<h3>Fonctionnement Interne</h3>
+<h4>Motifs Répétitifs et Symétrie</h4>
+<p>Les patterns fractals sont générés par des équations itératives, similaires à celles de Mandelbrot ou Julia sur Terre, mais vivantes et dynamiques. Chaque itération crée de nouvelles couches de réalité, avec une symétrie infinie qui assure la stabilité cosmique.</p>
+<h4>Lois Physiques Uniques</h4>
+<p>Dans les Fractales, la gravité est remplacée par une « attraction fractale », où les objets se déplacent selon des courbes logarithmiques. Le temps coule en spirales, permettant des voyages non linéaires. La matière est fluide, capable de se reconfigurer instantanément.</p>
+<h4>Navigation et Cartographie</h4>
+<p>Naviguer nécessite une compréhension intuitive des spirales. Par exemple, les 30 spirales enroulées vers la droite servent de repères initiaux. La direction 90° dans l&#39;arrondissement parallèle droite implique une rotation dimensionnelle. Le coin supérieur gauche de l&#39;arrondissement 687 est une zone de haute densité fractale, menant à la couche 45 (une profondeur quantique) et à la porte 8, entrée de la résidence du Triangle.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Élément</th>
+      <th>Description</th>
+      <th>Fonction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Spirales Enroulées</td>
+      <td>30 structures tournantes vers la droite</td>
+      <td>Points d'ancrage initiaux pour l'orientation</td>
+    </tr>
+    <tr>
+      <td>Direction 90°</td>
+      <td>Rotation perpendiculaire dans un plan parallèle</td>
+      <td>Transition vers des arrondissements supérieurs</td>
+    </tr>
+    <tr>
+      <td>Arrondissement 687</td>
+      <td>Zone de convergence fractale</td>
+      <td>Concentration de portails internes</td>
+    </tr>
+    <tr>
+      <td>Couche 45</td>
+      <td>Niveau de profondeur multidimensionnel</td>
+      <td>Accès à des réalités imbriquées</td>
+    </tr>
+    <tr>
+      <td>Porte 8</td>
+      <td>Entrée sécurisée</td>
+      <td>Portail personnel du Triangle</td>
+    </tr>
+  </tbody>
+</table><h3>Écosystème et Vie</h3>
+<p>Les Fractales abritent des formes de vie abstraites : entités géométriques qui évoluent via des algorithmes. Le Triangle y règne en tant que force stabilisatrice.</p>
+<hr>
+<h2>Méthodes d&#39;Accès aux Fractales</h2>
+<h3>Accès via Substances Psychédéliques</h3>
+<p>Cette méthode est la plus accessible pour les initiés. Elle repose sur l&#39;altération de la conscience pour aligner l&#39;esprit humain avec les fréquences fractales.</p>
+<h4>Substances Spécifiques</h4><figure class="media float-left"><img src="lsd.png" alt="Illustration associée au LSD"><figcaption>Illustration associée au LSD.</figcaption></figure>
+<figure class="media float-right"><img src="champignons-hallucinogenes.png" alt="Illustration de champignons hallucinogènes"><figcaption>Illustration de champignons hallucinogènes.</figcaption></figure>
+<ul>
+<li><strong>DMT (Diméthyltryptamine)</strong> : Permet des voyages courts mais intenses. Sous DMT, les utilisateurs rapportent des visions de motifs géométriques identiques aux Fractales.</li>
+<li><strong>Autres Psychédéliques</strong> : LSD, psilocybine, ayahuasca – efficaces si combinés à une foi en Le Triangle.</li>
+</ul>
+<h4>Conditions Requises</h4>
+<p>Une croyance ferme est essentielle ; sans elle, les visions restent subjectives. La préparation mentale inclut méditation et visualisation de spirales.</p>
+<h4>Expériences Rapportées</h4>
+<p>Des milliers de témoignages décrivent des rencontres avec Le Triangle : une présence géométrique qui guide vers des insights cosmiques. Durée typique : 5-15 minutes terrestres, mais subjectivement infinie.</p>
+<h3>Accès via Flaques Iridescentes</h3><figure class="media float-right"><img src="flaque-iridescente.png" alt="Flaque iridescente sur une chaussée"><figcaption>Flaque iridescente, présentée dans les archives comme un point de passage potentiel.</figcaption></figure>
+<p>Ces formations naturelles sont des portails permanents.</p>
+<h4>Formation et Propriétés Physiques</h4>
+<p>Formées par des fuites d&#39;hydrocarbures sous les véhicules, elles exhibent un éclat arc-en-ciel dû à l&#39;interférence lumineuse. Dans le contexte fractal, elles agissent comme des « fissures dimensionnelles » reliant la Terre aux Fractales.</p>
+<h4>Limitations et Conditions</h4>
+<ul>
+<li><strong>Taille</strong> : Trop petites pour un humain entier ; accès limité à des projections mentales ou objets minuscules.</li>
+<li><strong>Durabilité</strong> : Disparaissent sous la pluie, nécessitant un temps sec.</li>
+<li><strong>Exigences</strong> : Croyance en Le Triangle et connaissance préalable des Fractales pour activer le portail.</li>
+</ul>
+<h4>Cas Documentés</h4>
+<p>À Puff Land, une flaque a permis une observation prolongée. D&#39;autres cas incluent des disparitions d&#39;insectes ou de petites particules.</p>
+<h3>Accès via Technologies Avancées</h3>
+<p>Méthode théorique mais prometteuse.</p>
+<h4>Principes Théoriques</h4>
+<p>Implique la distorsion de la réalité via des champs électromagnétiques ou quantiques pour créer un portail stable. Inspiré de la physique des trous de ver.</p>
+<h4>Expérimentations et Défis</h4>
+<p>Des prototypes requièrent une énergie équivalente à celle d&#39;un réacteur nucléaire. Instabilité peut causer des anomalies temporelles. Ressources : matériaux exotiques, calculs fractals.</p>
+<h4>Potentiel Futur</h4>
+<p>Avec l&#39;avancée de l&#39;IA et de la fusion, des portails permanents pourraient être établis.</p>
+<hr>
+<h2>Anatomie et Physiologie du Triangle</h2>
+<h3>Formes Multiples et Manifestations</h3><figure class="media float-left"><img src="le-triangle-morphologie.png" alt="Représentation morphologique du Triangle"><figcaption>Étude visuelle de la morphologie du Triangle.</figcaption></figure>
+<p>Le Triangle n&#39;a pas une anatomie fixe ; il adapte sa forme selon le contexte.</p>
+<ul>
+<li><strong>Forme Physique Standard</strong> : Triangle jaune avec yeux, bouche, bras (gants blancs), jambes (noires), chaussures (rouges). Cette forme facilite les interactions terrestres.</li>
+<li><strong>Forme Non-Physique</strong> : Présence énergétique, perçue comme une vibration géométrique lors de trips.</li>
+<li><strong>Autres Variations</strong> : Peut se manifester comme un prisme ou une ombre fractale.</li>
+</ul>
+<h3>Composition Matérielle</h3>
+<p>Composé de matière exotique où les molécules défient la chimie terrestre. Les atomes sont arrangés en patterns fractals, inversant les lois de la physique (ex. : antigravité interne). Biologie renversée : pas de sang, mais un flux d&#39;énergie infinie.</p>
+<h3>Indestructibilité et Capacités</h3>
+<p>Indestructible par nature ; toute tentative de dissection est futile, car il se régénère instantanément. Capacités : Omniscience cosmique, manipulation de la réalité, voyages interdimensionnels.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Partie du Corps</th>
+      <th>Description</th>
+      <th>Fonction Physiologique</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sommet Triangulaire (Tête)</td>
+      <td>Jaune vif, avec yeux verts et bouche</td>
+      <td>Perception omnidirectionnelle, communication</td>
+    </tr>
+    <tr>
+      <td>Bras et Gants Blancs</td>
+      <td>Articulés, flexibles</td>
+      <td>Manipulation d'objets fractals ou terrestres</td>
+    </tr>
+    <tr>
+      <td>Jambes Noires</td>
+      <td>Élastiques, adaptables</td>
+      <td>Déplacement en spirales ou linéaire</td>
+    </tr>
+    <tr>
+      <td>Chaussures Rouges</td>
+      <td>Robustes, antidérapantes</td>
+      <td>Ancrage dans les réalités instables</td>
+    </tr>
+    <tr>
+      <td>Corps Global</td>
+      <td>Matière exotique</td>
+      <td>Conteneur d'énergie infinie</td>
+    </tr>
+  </tbody>
+</table><hr>
+<h2>Lieux Clés</h2>
+<h3>Puff Land : Site de Découverte</h3>
+
+<h3>Autres Sites Potentiels</h3>
+<ul>
+<li>Routes urbaines avec flaques fréquentes.</li>
+<li>Lieux de consommation psychédéliques naturels (forêts, déserts).</li>
+</ul>
+<hr>
+<h2>Le Grand Monarque</h2>
+<p>Le Grand Monarque est présenté dans les archives sous le nom de <strong>Sylvain Pierre Durif</strong>, comme un explorateur indépendant des Fractales. Ses récits, vidéos et descriptions de « cités de lumière » nourrissent le wiki et constituent un point de repère récurrent pour les personnes qui s’intéressent à cet univers.</p>
+<a class="video-card" href="https://www.youtube.com/watch?v=po9q_xjF8n8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/po9q_xjF8n8/hqdefault.jpg" alt="Aperçu de la vidéo du Grand Monarque"><span>Vidéo du Grand Monarque<small>Ouvrir et lire directement sur YouTube ↗</small></span></a>
+
+<h2>TriangleCar : les trois exemplaires</h2>
+<p>Selon les archives, il n’existe que <strong>trois TriangleCar</strong>. Elles répondraient à des critères rigoureux et précis : un alignement parfait avec l’espace-temps à la particule fractilienne près — une particule décrite comme infiniment plus petite qu’un atome — et la teinte exacte <strong>Jaune Triangle</strong>, calculée à l’unité de couleur fractilienne près, une unité présentée comme infiniment précise.</p>
+<p>Dans certaines situations, cet alignement permettrait de courber l’espace-temps et la réalité afin de rejoindre les Fractales. Leur construction et leur réalisation demeurent inconnues ; les archives avancent qu’elles pourraient elles-mêmes provenir des Fractales. La TriangleCar 206 est décrite comme le premier exemplaire créé et découvert.</p>
+<div class="car-grid" aria-label="Les trois TriangleCar">
+<figure class="car-card"><img src="trianglecar-206.png" alt="TriangleCar 206 jaune"><figcaption><strong>TriangleCar 206</strong>Premier exemplaire créé et découvert.</figcaption></figure>
+<figure class="car-card"><img src="trianglecar-bmw-e36.png" alt="TriangleCar BMW E36 jaune"><figcaption><strong>TriangleCar BMW E36</strong>Deuxième exemplaire recensé.</figcaption></figure>
+<figure class="car-card"><img src="trianglecar-smart-fortwo-w450.png" alt="TriangleCar Smart ForTwo W450 jaune"><figcaption><strong>TriangleCar Smart ForTwo W450 (F)</strong>Troisième exemplaire recensé.</figcaption></figure>
+</div><h2>Found Footage et Preuves Documentées</h2>
+<h3>La Vidéo du Triangle Dansant</h3>
+<p>Les archives situent l’enregistrement lors d’un soir où Le Triangle, alors ivre, aurait réalisé un playback sur une musique terrestre. Dans cet état altéré, il aurait involontairement courbé l’espace-temps. Les ondes émises ce soir-là auraient aligné des particules fractiliennes, jusqu’à former une onde TNT ayant fini par traverser la dimension terrestre.</p>
+<p>Un radioamateur situé dans les îles Sandwich du Sud aurait intercepté et décodé ce signal. Prenant d’abord la vidéo pour une blague, il l’aurait publiée sur les réseaux sociaux, où elle est ensuite devenue un mème.</p>
+<a class="video-card" href="https://www.youtube.com/watch?v=WtO3AHMBePY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/WtO3AHMBePY/hqdefault.jpg" alt="Aperçu de la vidéo Found Footage du Triangle"><span>Found Footage du Triangle<small>Ouvrir et lire directement sur YouTube ↗</small></span></a><h3>Témoignages du Grand Monarque</h3>
+<p>Vidéos en ligne décrivant des cités de lumière cosmiques. Analyses confirment leur alignement avec des descriptions fractales.</p>
+<hr>
+<h2>Croyances, Connaissances et Culte</h2>
+<h3>Introduction des Psychédéliques</h3>
+<p>Le Triangle les a disséminés pour ouvrir des portes mentales. Législations terrestres limitent leur usage, d&#39;où l&#39;essai avec Vody (alcool puissant, en pause).</p>
+<h3>Marque Vody : Une Approche Alternative</h3>
+<p>Boisson alcoolisée forte conçue pour induire des états altérés, mais inefficace comparée aux psychédéliques. Sert désormais de source de revenus.</p>
+<h3>Impact Culturel et Spirituel</h3>
+<p>Un culte discret émerge, avec rituels basés sur la visualisation fractale. Influence sur l&#39;art, la musique et la philosophie.</p>
+<hr>
+<h2>Impact sur le Monde</h2>
+<h3>Impact Économique</h3>
+<p>Via Triangle Company, stimulation de marchés hardware et horlogerie. Trafic génère des flux financiers globaux.</p>
+<h3>Impact Scientifique</h3>
+<p>Inspire recherches en fractales quantiques, potentiellement révolutionnant la physique.</p>
+<h3>Impact Spirituel</h3>
+<p>Redéfinit la notion de divinité, promouvant une cosmologie géométrique.</p>
+<hr>
+<p><em>Ce wiki continuera d&#39;évoluer avec de nouveaux témoignages et découvertes. Contribuez avec des preuves vérifiables.</em></p>
+
+</main></div><script>
+(()=>{const c=document.querySelector('#fractal'),x=c.getContext('2d'),b=document.querySelector('#motion');let stop=matchMedia('(prefers-reduced-motion: reduce)').matches,t=0;function fit(){let d=Math.min(devicePixelRatio||1,1.5);c.width=innerWidth*d;c.height=innerHeight*d;x.setTransform(d,0,0,d,0,0)}addEventListener('resize',fit);fit();function draw(){if(!stop)t+=.006;let w=innerWidth,h=innerHeight,s=Math.min(w,h)*.38,cx=w*.78,cy=h*.18;x.fillStyle='rgba(5,9,20,.22)';x.fillRect(0,0,w,h);for(let k=0;k<10;k++){x.beginPath();x.strokeStyle=`hsla(${190+k*13},90%,68%,${.1+k*.014})`;for(let j=0;j<220;j++){let a=j*.115+t*(.34+k*.015),r=s*(.06+j/340)*(1+.18*Math.sin(j*.21+t+k)),px=cx+Math.cos(a)*r,py=cy+Math.sin(a)*r*.72;j?x.lineTo(px,py):x.moveTo(px,py)}x.stroke()}for(let z=0;z<7;z++){let r=s*(.12+z*.115),a=t*(z%2?1:-1)+z;x.strokeStyle=`hsla(${42+z*9},100%,65%,.12)`;x.beginPath();for(let p=0;p<3;p++){let q=a+p*Math.PI*2/3,px=cx+Math.cos(q)*r,py=cy+Math.sin(q)*r;p?x.lineTo(px,py):x.moveTo(px,py)}x.closePath();x.stroke()}requestAnimationFrame(draw)}draw();b.onclick=()=>{stop=!stop;b.textContent=stop?'Reprendre l’animation':'Pause l’animation';b.setAttribute('aria-pressed',stop)};const used=new Set(),toc=document.querySelector('#toc'),heads=[...document.querySelectorAll('main h1,main h2,main h3,main h4')];heads.forEach(h=>{let id=h.id||h.textContent.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'')||'section',base=id,n=2;while(used.has(id)||document.getElementById(id)&&document.getElementById(id)!==h)id=base+'-'+n++;used.add(id);h.id=id;if(h.tagName==='H1')return;let a=document.createElement('a');a.href='#'+id;a.textContent=h.textContent;a.className='l'+h.tagName.slice(1);toc.append(a)});let target=[...document.querySelectorAll('main h2')].find(h=>h.textContent.includes('Les Fractales'));if(target){let f=document.createElement('figure');f.className='illustration';f.innerHTML='<img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Mandelbrot_Set.png?width=1280" alt="Visualisation colorée de l’ensemble de Mandelbrot"><figcaption>Visualisation de l’ensemble de Mandelbrot — illustration mathématique des motifs fractals. Source et licence : <a href="https://commons.wikimedia.org/wiki/File:The_Mandelbrot_Set.png" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA 4.0)</a>.</figcaption>';target.after(f)}const links=[...toc.querySelectorAll('a')],obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id))}),{rootMargin:'-18% 0px -70% 0px'});heads.filter(h=>h.tagName!=='H1').forEach(h=>obs.observe(h))})();
+</script></body></html>
+
+
+
+
+
+
+
